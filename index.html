@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Механические клавиатуры</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<!--шапка-->
+<header class="header">
+        <a href="#" class="logo">КибКрафт<span>.</span></a>
+        <input
+            type="search"
+            class="search"
+            placeholder="Найти товар..."
+            aria-label="Поиск товаров"
+        >
+        <div class="header-actions">
+            <button id="theme-toggle" type="button">
+                Тёмная тема
+            </button>
+            <button id="cart-button" type="button">
+                Корзина (0)
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="catalog-heading">
+            <div>
+                <p class="eyebrow">ТВОЙ СТИЛЬ.</p>
+                <h1>Найди свою идеальную клавиатуру</h1>
+                <p class="subtitle">
+                    Механические клавиатуры и аксессуары
+                    для работы, игр и творчества.
+                </p>
+            </div>
+
+            <button id="filter-toggle" type="button">
+                Фильтры
+            </button>
+        </section>
+
+        <!--pатемнение для мобильной панели-->
+        <div id="overlay" class="overlay"></div>
+
+        <div class="catalog-layout">
+
+            <!--боковая панель фильтров-->
+            <aside id="filters" class="filters">
+
+                <div class="filter-heading">
+                    <h2>Фильтры</h2>
+
+                    <button
+                        id="filter-close"
+                        type="button"
+                        aria-label="Закрыть фильтры"
+                    >×</button>
+                </div>
+
+                <h3>Тип товара</h3>
+
+                <label class="custom-check">
+                    <input type="checkbox" name="type" value="keyboard">
+                    <span class="checkmark"></span>
+                    Клавиатуры
+                </label>
+
+                <label class="custom-check">
+                    <input type="checkbox" name="type" value="switches">
+                    <span class="checkmark"></span>
+                    Свитчи
+                </label>
+
+                <label class="custom-check">
+                    <input type="checkbox" name="type" value="accessories">
+                    <span class="checkmark"></span>
+                    Аксессуары
+                </label>
+
+                <h3>Подсветка</h3>
+
+                <label class="custom-check">
+                    <input type="checkbox" name="lighting" value="rgb">
+                    <span class="checkmark"></span>
+                    RGB-подсветка
+                </label>
+
+                <label class="custom-check">
+                    <input type="checkbox" name="lighting" value="none">
+                    <span class="checkmark"></span>
+                    Без подсветки
+                </label>
+
+            </aside>
+
+            <!--каталог товаров-->
+            <section class="catalog" aria-label="Каталог товаров">
+
+                <article class="card">
+                    <div class="product-image">
+                        <span class="discount">−15%</span>
+                        <img src="img/fantom.jpg">
+                    </div>
+                    <div class="card-content">
+                        <p class="category">КЛАВИАТУРЫ</p>
+                        <h2>КибКрафт Фантом</h2>
+                        <p class="description">
+                            Механическая клавиатура с RGB-подсветкой
+                        </p>
+                        <div class="price">
+                            <strong>8 490 ₽</strong>
+                            <del>9 990 ₽</del>
+                        </div>
+                        <button class="buy-button" type="button">
+                            В корзину
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="product-image">
+                        <img src="img/switch.jpeg">
+                    </div>
+                    <div class="card-content">
+                        <p class="category">СВИТЧИ</p>
+                        <h2>КибКрафт Вайолет</h2>
+                        <p class="description">
+                            Стильный набор свитчей для кастома
+                        </p>
+                        <div class="price">
+                            <strong>2 000 ₽</strong>
+                        </div>
+                        <button class="buy-button" type="button">
+                            В корзину
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="product-image">
+
+                        <img src="img/60.jpg">
+                    </div>
+
+                    <div class="card-content">
+                        <p class="category">КЛАВИАТУРЫ</p>
+                        <h2>КибКрафт Мини</h2>
+                        <p class="description">
+                            Компактная клавиатура формата 60%
+                        </p>
+
+                        <div class="price">
+                            <strong>6 790 ₽</strong>
+                            <del>7 490 ₽</del>
+                        </div>
+
+                        <button class="buy-button" type="button">
+                            В корзину
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="product-image">
+                        <img src="img/klv.jpg">
+                    </div>
+
+                    <div class="card-content">
+                        <p class="category">КЛАВИАТУРЫ</p>
+                        <h2>КибКрафт Нова</h2>
+                        <p class="description">
+                            Для игр и повседневной работы. С RGB-подсветкой
+                        </p>
+
+                        <div class="price">
+                            <strong>10 990 ₽</strong>
+                        </div>
+
+                        <button class="buy-button" type="button">
+                            В корзину
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="product-image">
+                        <img src="img/aks.jpg">
+                    </div>
+
+                    <div class="card-content">
+                        <p class="category">АКСЕССУАРЫ</p>
+                        <h2>КибКрафт Классик</h2>
+                        <p class="description">
+                            Стиль и комфорт на каждый день
+                        </p>
+
+                        <div class="price">
+                            <strong>7 290 ₽</strong>
+                        </div>
+
+                        <button class="buy-button" type="button">
+                            В корзину
+                        </button>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+
+    <!--подвал-->
+    <footer class="footer">
+        <div>
+            <a href="#" class="logo">КибКрафт<span>.</span></a>
+            <p>Мир механических клавиатур</p>
+        </div>
+        <p>2026 КибКрафт</p>
+    </footer>
+    
+<div id="cart-window" class="cart-window" hidden>
+    <div class="cart-content">
+        <div class="cart-heading">
+            <h2>Моя корзина</h2>
+            <button id="cart-close" type="button">Закрыть</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <p>Итого: <strong id="cart-total">0 ₽</strong></p>
+    </div>
+</div>
+
+</body>
+</html>
