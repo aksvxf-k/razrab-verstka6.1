@@ -334,3 +334,144 @@ a {
     margin-top: 20px;
     font-size: 18px;
 }
+
+/*3D-сцена клавиатуры*/
+.keyboard-scene {
+    perspective: 1200px;
+    margin: 80px 5px 5px;
+}
+.keyboard-3d {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateX(50deg) rotateY(10deg);
+}
+
+
+/*общий стиль слоев*/
+.keyboard-layer {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    transition: transform 0.5s ease;
+}
+
+/*положение каждого слоя*/
+.layer-base {
+    transform: translateZ(0);
+}
+.layer-board {
+    transform: translateZ(40px);
+}
+.layer-switches {
+    transform: translateZ(80px);
+}
+.layer-keys {
+    transform: translateZ(120px);
+}
+#explode-button {
+    display: block;
+    margin: 0 40px 30px auto;
+    transform: translateY(80px);
+}
+
+/*анимации*/
+.keyboard-3d.exploded .layer-base {
+    transform: translateZ(0);
+}
+.keyboard-3d.exploded .layer-board {
+    transform: translateZ(100px) translateY(25px);
+}
+.keyboard-3d.exploded .layer-switches {
+    transform: translateZ(200px) translateY(50px);
+}
+.keyboard-3d.exploded .layer-keys {
+    transform: translateZ(300px) translateY(75px);
+}
+
+.glitch-title {
+    position: relative;
+    display: inline-block;
+}
+.glitch-title::before,
+.glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.glitch-title::before {
+    color: #00f0ff;
+    animation: glitch-anim 2.5s infinite steps(2, start);
+}
+.glitch-title::after {
+    color: #ff1d51;
+    animation: glitch-anim 3.2s infinite steps(3, start);
+}
+
+/*глитч-анимация*/
+@keyframes glitch-anim {
+    0%, 90%, 100% {
+        transform: translate(0);
+        clip-path: inset(0);
+    }
+    92% {
+        transform: translate(-2px, 1px);
+        clip-path: inset(20% 0 60% 0);
+    }
+    96% {
+        transform: translate(2px, -1px);
+        clip-path: inset(60% 0 20% 0);
+    }
+}
+
+.hud {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px auto;
+}
+.hud-item {
+    width: 110px;
+    text-align: center;
+    color: #6a8f92;
+}
+.hud-item svg {
+    width: 100%;
+}
+.hud-bg,
+.hud-progress {
+    fill: none;
+    stroke-width: 5;
+}
+.hud-bg {
+    stroke: #252b3a;
+}
+.hud-progress {
+    stroke: #00f0ff;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 80;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    animation: hud-load 2s ease-in-out infinite alternate;
+}
+.hud-progress.second {
+    stroke: #ff003c;
+    stroke-dashoffset: 80;
+}
+@keyframes hud-load {
+    from {
+        stroke-dashoffset: 251;
+    }
+    to {
+        stroke-dashoffset: 60;
+    }
+}

@@ -32,7 +32,7 @@
         <section class="catalog-heading">
             <div>
                 <p class="eyebrow">ТВОЙ СТИЛЬ.</p>
-                <h1>Найди свою идеальную клавиатуру</h1>
+                <h1 class="glitch-title" data-text="Найди свою идеальную клавиатуру">Найди свою идеальную клавиатуру</h1>
                 <p class="subtitle">
                     Механические клавиатуры и аксессуары
                     для работы, игр и творчества.
@@ -44,7 +44,49 @@
             </button>
         </section>
 
-        <!--pатемнение для мобильной панели-->
+        <!--3D-модель клавиатуры-->
+        <section class="keyboard-scene">
+            <button id="explode-button" type="button">
+                Разобрать клавиатуру
+            </button>
+
+            <div class="keyboard-3d">
+                <img src="img/case.png"
+                class="keyboard-layer layer-base"
+                alt="Корпус клавиатуры">
+
+                <img src="img/plate-pcb.png"
+                class="keyboard-layer layer-board"
+                alt="Печатная плата и металлическая пластина">
+
+                <img src="img/switches.png"
+                class="keyboard-layer layer-switches"
+                alt="Механические переключатели клавиатуры">
+
+                <img src="img/keycaps.png"
+                class="keyboard-layer layer-keys"
+                alt="Клавиши клавиатуры">
+            </div>
+        </section>
+
+        <div class="hud">
+            <div class="hud-item">
+                <svg viewBox="0 0 100 100">
+                    <circle class="hud-bg" cx="50" cy="50" r="40"/>
+                    <circle class="hud-progress" cx="50" cy="50" r="40"/>
+                </svg>
+                <p>МОЩНОСТЬ</p>
+            </div>
+            <div class="hud-item">
+                <svg viewBox="0 0 100 100">
+                    <circle class="hud-bg" cx="50" cy="50" r="40"/>
+                    <circle class="hud-progress second" cx="50" cy="50" r="40"/>
+                </svg>
+                <p>СКОРОСТЬ</p>
+            </div>
+        </div>
+
+        <!--затемнение для мобильной панели-->
         <div id="overlay" class="overlay"></div>
 
         <div class="catalog-layout">
